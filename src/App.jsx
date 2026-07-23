@@ -3,14 +3,14 @@ import { profile } from './data/profile'
 import { downloadVCard } from './utils/vcard'
 import { ContactCardIcon, ApplyEditIcon, ChevronIcon } from './components/icons'
 import { ContactList } from './components/ContactList'
-import { HeartsTrail } from './components/HeartsTrail'
+import { StarsTrail } from './components/StarsTrail'
 import { ReviewsPointer } from './components/ReviewsPointer'
 import { ReviewsCarousel } from './components/ReviewsCarousel'
 import { Footer } from './components/Footer'
 import './App.css'
 
 const MAX_CARD_WIDTH = 430
-const HEARTS_BURST_DURATION_MS = 3300
+const STARS_BURST_DURATION_MS = 3300
 
 function useFillScreen(ref) {
   useLayoutEffect(() => {
@@ -62,27 +62,27 @@ function App() {
   const pageRef = useRef(null)
   useFillScreen(pageRef)
 
-  const [heartsActive, setHeartsActive] = useState(false)
-  const [heartsBurstId, setHeartsBurstId] = useState(0)
-  const heartsTimeoutRef = useRef(null)
+  const [starsActive, setStarsActive] = useState(false)
+  const [starsBurstId, setStarsBurstId] = useState(0)
+  const starsTimeoutRef = useRef(null)
 
-  function triggerHearts() {
-    setHeartsBurstId((id) => id + 1)
-    setHeartsActive(true)
-    clearTimeout(heartsTimeoutRef.current)
-    heartsTimeoutRef.current = setTimeout(triggerHearts, HEARTS_BURST_DURATION_MS)
+  function triggerStars() {
+    setStarsBurstId((id) => id + 1)
+    setStarsActive(true)
+    clearTimeout(starsTimeoutRef.current)
+    starsTimeoutRef.current = setTimeout(triggerStars, STARS_BURST_DURATION_MS)
   }
 
   useEffect(() => {
-    triggerHearts()
-    return () => clearTimeout(heartsTimeoutRef.current)
+    triggerStars()
+    return () => clearTimeout(starsTimeoutRef.current)
   }, [])
 
   return (
     <div className="viewport">
       <div className="page" ref={pageRef}>
         <div className="top-section">
-          <HeartsTrail active={heartsActive} burstId={heartsBurstId} />
+          <StarsTrail active={starsActive} burstId={starsBurstId} />
 
           <header className="profile-header">
             <img src={profile.profileImage} alt={profile.name} className="profile-photo" />
@@ -104,7 +104,7 @@ function App() {
 
           <div className="contact-section">
             <ContactList profile={profile} />
-            <ReviewsPointer onReviewsClick={triggerHearts} reviewsUrl={profile.reviewsUrl} />
+            <ReviewsPointer onReviewsClick={triggerStars} reviewsUrl={profile.reviewsUrl} />
           </div>
         </div>
 

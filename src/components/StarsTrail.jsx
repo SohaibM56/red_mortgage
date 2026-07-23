@@ -1,6 +1,6 @@
-import { HeartIcon } from './icons'
+import { StarIcon } from './icons'
 
-const HEARTS = [
+const STARS = [
   { top: 3, left: 24, size: 18, color: '#f2b3bc' },
   { top: 5, left: 22, size: 24, color: '#c31432' },
   { top: 8, left: 34, size: 16, color: '#f4c3ca' },
@@ -28,21 +28,21 @@ const HEARTS = [
 
 const STAGGER_MS = 55
 
-export function HeartsTrail({ active, burstId }) {
+export function StarsTrail({ active, burstId }) {
   return (
-    <div className="hearts-trail" aria-hidden="true">
+    <div className="stars-trail" aria-hidden="true">
       {active && (
-        <div className="hearts-trail-burst" key={burstId}>
-          {HEARTS.map((heart, index) => (
-            <HeartIcon
+        <div className="stars-trail-burst" key={burstId}>
+          {STARS.map((star, index) => (
+            <StarIcon
               key={index}
-              className="hearts-trail-heart"
+              className="stars-trail-star"
               style={{
-                top: `${heart.top}%`,
-                left: heart.left,
-                width: heart.size,
-                height: heart.size,
-                color: heart.color,
+                top: `${star.top}%`,
+                left: star.left,
+                width: star.size,
+                height: star.size,
+                color: star.color,
                 animationDelay: `${index * STAGGER_MS}ms`,
               }}
             />
