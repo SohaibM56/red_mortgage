@@ -1,8 +1,9 @@
-import { useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { StarIcon } from './icons'
 import reviewHouse from '../assets/review_house.svg'
 
 const SWIPE_THRESHOLD = 40
+const AUTO_SWIPE_DELAY = 4000
 
 export function ReviewsCarousel({ reviews, rating }) {
   const [activeIndex, setActiveIndex] = useState(0)
@@ -11,6 +12,12 @@ export function ReviewsCarousel({ reviews, rating }) {
   function goTo(index) {
     setActiveIndex((index + reviews.length) % reviews.length)
   }
+
+  useEffect(() => {
+    if (reviews.length <= 1) return
+    const timer = setTimeout(() => goTo(activeIndex + 1), AUTO_SWIPE_DELAY)
+    return () => clearTimeout(timer)
+  }, [activeIndex, reviews.length])
 
   function handleTouchStart(event) {
     touchStartX.current = event.touches[0].clientX

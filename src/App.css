@@ -269,6 +269,25 @@
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
+  animation: heartbeat 1.2s ease-in-out infinite;
+}
+
+@keyframes heartbeat {
+  0%, 100% {
+    transform: scale(1);
+  }
+  15% {
+    transform: scale(1.15);
+  }
+  30% {
+    transform: scale(1);
+  }
+  45% {
+    transform: scale(1.1);
+  }
+  60% {
+    transform: scale(1);
+  }
 }
 
 .reviews-pointer-heart-fill {
@@ -456,8 +475,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 14px 18px 0;
-  padding: 14px 20px;
+  margin: 10px 8px 0;
+  padding: 20px 20px;
   background: var(--red);
   color: #fff;
   text-decoration: none;

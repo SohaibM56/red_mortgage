@@ -99,7 +99,7 @@ function App() {
             onClick={() => downloadVCard(profile)}
           >
             <ContactCardIcon className="save-contact-icon" />
-            Save to Contact
+            Save to Contacts
           </button>
 
           <div className="contact-section">
