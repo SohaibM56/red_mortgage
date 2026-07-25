@@ -1,5 +1,3 @@
-import heartPng from '../assets/heart.png'
-
 export function ContactCardIcon(props) {
   return (
     <svg viewBox="0 0 24 24" fill="none" {...props}>
@@ -68,27 +66,6 @@ export function StarIcon(props) {
         fill="currentColor"
       />
     </svg>
-  )
-}
-
-export function HeartIcon({ style, ...rest }) {
-  return (
-    <div
-      {...rest}
-      style={{
-        display: 'inline-block',
-        backgroundColor: 'currentColor',
-        WebkitMaskImage: `url(${heartPng})`,
-        maskImage: `url(${heartPng})`,
-        WebkitMaskRepeat: 'no-repeat',
-        maskRepeat: 'no-repeat',
-        WebkitMaskSize: 'contain',
-        maskSize: 'contain',
-        WebkitMaskPosition: 'center',
-        maskPosition: 'center',
-        ...style,
-      }}
-    />
   )
 }
 

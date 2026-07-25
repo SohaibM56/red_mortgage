@@ -1,11 +1,10 @@
-import { HeartIcon, LongArrowDownIcon } from './icons'
+import { StarIcon, LongArrowDownIcon } from './icons'
 
 export function ReviewsPointer({ onReviewsClick, reviewsUrl }) {
   return (
     <div className="reviews-pointer">
-      <div className="reviews-pointer-heart">
-        <HeartIcon className="reviews-pointer-heart-fill" />
-        <HeartIcon className="reviews-pointer-heart-inner" />
+      <div className="reviews-pointer-star">
+        <StarIcon className="reviews-pointer-star-icon" />
       </div>
       <LongArrowDownIcon className="reviews-pointer-arrow" />
       <a

@@ -9,6 +9,7 @@
 
 .page {
   --red: #c31432;
+  --gold: #d4af37;
   --navy: #17202a;
   --muted: #6b7280;
   --border: #e7e5ea;
@@ -48,13 +49,11 @@
 .stars-trail-star {
   position: absolute;
   left: 0;
-  color: var(--red);
+  color: var(--gold);
   opacity: 0;
   animation: star-float 1.9s cubic-bezier(0.22, 0.61, 0.36, 1) both;
 }
 
-/* transform is only set at 0%/100% so it interpolates continuously across
-   the whole duration — a smooth glide, not a quick shot then a dead stop */
 @keyframes star-float {
   0% {
     opacity: 0;
@@ -135,10 +134,10 @@
   z-index: 1;
   text-align: center;
   color: #000000;
-  font-size: 18px;
+  font-size: 22px;
   line-height: 1.35;
   margin-top: 9px;
-  max-width: 330px;
+  max-width: 380px;
   margin-inline: auto;
 }
 
@@ -214,8 +213,8 @@
 }
 
 .contact-row-icon svg {
-  width: 30px;
-  height: 30px;
+  width: 438x;
+  height: 38px;
 }
 
 .contact-row-text {
@@ -228,11 +227,11 @@
 
 .contact-row-label {
   font-weight: 700;
-  font-size: 20px;
+  font-size: 24px;
 }
 
 .contact-row-value {
-  font-size: 15px;
+  font-size: 18px;
   color: #000000;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -261,7 +260,7 @@
   color: var(--red);
 }
 
-.reviews-pointer-heart {
+.reviews-pointer-star {
   position: relative;
   width: 110px;
   height: 94px;
@@ -290,19 +289,10 @@
   }
 }
 
-.reviews-pointer-heart-fill {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  color: var(--red);
-}
-
-.reviews-pointer-heart-inner {
-  position: relative;
-  width: 38px;
-  height: 32px;
-  color: #fff;
+.reviews-pointer-star-icon {
+  width: 84px;
+  height: 84px;
+  color: var(--gold);
 }
 
 .reviews-pointer-arrow {
@@ -347,7 +337,7 @@
 .reviews-star {
   width: 20px;
   height: 20px;
-  color: var(--red);
+  color: var(--gold);
 }
 
 .reviews-rating-number {
@@ -385,7 +375,7 @@
 .review-quote-mark {
   font-weight: 700;
   line-height: 1;
-  color: var(--red);
+  color: var(--gold);
   font-family: Georgia, serif;
 }
 
@@ -442,7 +432,7 @@
 .review-star {
   width: 19px;
   height: 19px;
-  color: var(--red);
+  color: var(--gold);
 }
 
 .review-dots {
@@ -476,12 +466,12 @@
   align-items: center;
   justify-content: center;
   margin: 10px 8px 0;
-  padding: 20px 20px;
+  padding: 22.5px 20px;
   background: var(--red);
   color: #fff;
   text-decoration: none;
   border-radius: 10px;
-  font-size: 20px;
+  font-size: 25px;
   font-weight: 500;
   letter-spacing: 0.5px;
 }
